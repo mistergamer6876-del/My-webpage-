@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Web testing
+  </title>
+</head>
+<body>
+  <h1> About Myself</h1>
+  <p> Hi. My name is Saim . If you are wondering that how did I made a website, because i downloaded an app called "HTML Editor" and i coded using my 9<sup>Th</sup> class computer book . I like to code stuff like this . I'm a pakistani student . I live in Multan. You can contact me on discord . Here is my link <a herf="https://discord.gg/Epqb7Uw2"></a> . Make sure to suggest me some more ideas for web development. I made a game for YOU . Try it out!. its kinda fun . where you have to guess a number between 1-100 . it'll say lower or higher . Untill you guess the exact number . </p>
+  <h1>Guess a number (1-100)</h1>
+  <input id="guess" type="number">
+  <button onclick="checkGuess()">Guess</button>
+  <p id="message"></p>
+
+  <script>
+    let target = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      let guess = Number(document.getElementById('guess').value);
+      attempts++;
+      
+      if (guess < target) {
+        document.getElementById('message').innerText = "Higher! Attempts: " + attempts;
+      } else if (guess > target) {
+        document.getElementById('message').innerText = "Lower! Attempts: " + attempts;
+      } else {
+        document.getElementById('message').innerText = `Yay! You guessed it in ${attempts} attempts!`;
+      }
+    }
+  </script>
+</body>
+
+</html>
